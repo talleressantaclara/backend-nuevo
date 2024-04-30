@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_disenio_como_trabajamos",
+  "info": {
+    "displayName": "ComoTrabajamos",
+    "icon": "shield",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "descripcion": {
+      "type": "text",
+      "maxLength": 80
+    },
+    "caracteristicas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::caracteristica.caracteristica"
+    }
+  }
+}

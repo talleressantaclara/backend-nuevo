@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "opcion_contactos",
+  "info": {
+    "singularName": "opcion-contacto",
+    "pluralName": "opcion-contactos",
+    "displayName": "opcionContacto"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "label": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
+    },
+    "icono": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

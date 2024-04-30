@@ -1,0 +1,85 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fondo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "preTitulo": {
+      "type": "string",
+      "maxLength": 40,
+      "required": true
+    },
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 75
+    },
+    "subtitulo": {
+      "type": "text",
+      "required": true,
+      "maxLength": 150
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utilidades.cta"
+    },
+    "comoTrabajamos": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.como-trabajamos",
+      "required": true
+    },
+    "servicios": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.servicios",
+      "required": true
+    },
+    "nosotros": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.nosotros",
+      "required": true
+    },
+    "caracteristicas": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.caracteristicas",
+      "required": true
+    },
+    "contacto": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.contacto",
+      "required": true
+    },
+    "blog": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.blog",
+      "required": true
+    },
+    "mapa": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.mapa",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reds",
+  "info": {
+    "singularName": "red",
+    "pluralName": "reds",
+    "displayName": "Red"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "href": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "icono": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

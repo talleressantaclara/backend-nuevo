@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_disenio_contactos",
+  "info": {
+    "displayName": "Contacto",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": false,
+      "maxLength": 80
+    },
+    "fondo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_utilidades_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "hashtag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "href": {
+      "type": "string",
+      "required": true,
+      "maxLength": 25
+    }
+  }
+}

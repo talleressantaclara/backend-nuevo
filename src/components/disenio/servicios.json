@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_disenio_servicios",
+  "info": {
+    "displayName": "Servicios",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "descripcion": {
+      "type": "text",
+      "maxLength": 100
+    },
+    "services": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::service.service"
+    }
+  }
+}

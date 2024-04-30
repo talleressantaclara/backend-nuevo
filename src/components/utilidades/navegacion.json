@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_utilidades_navegacions",
+  "info": {
+    "displayName": "Navegacion",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "component",
+      "repeatable": true,
+      "component": "utilidades.link",
+      "required": true
+    }
+  }
+}

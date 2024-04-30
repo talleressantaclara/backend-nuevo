@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_disenio_nosotros",
+  "info": {
+    "displayName": "Nosotros",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "descripcion": {
+      "type": "text",
+      "maxLength": 80
+    },
+    "contenido": {
+      "type": "text",
+      "maxLength": 500,
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "utilidades.cta",
+      "required": true
+    },
+    "fondo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

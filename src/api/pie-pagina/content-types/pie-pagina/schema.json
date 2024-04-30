@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "pie_paginas",
+  "info": {
+    "singularName": "pie-pagina",
+    "pluralName": "pie-paginas",
+    "displayName": "PiePagina",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "copyright": {
+      "type": "string",
+      "maxLength": 150,
+      "required": true
+    },
+    "redes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::red.red"
+    }
+  }
+}

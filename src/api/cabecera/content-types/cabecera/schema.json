@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "cabeceras",
+  "info": {
+    "singularName": "cabecera",
+    "pluralName": "cabeceras",
+    "displayName": "Cabecera",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "navegacion": {
+      "displayName": "Navegacion",
+      "type": "component",
+      "repeatable": false,
+      "component": "utilidades.navegacion"
+    },
+    "redes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::red.red"
+    },
+    "opciones_de_contactos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::opcion-contacto.opcion-contacto"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "como_trabajamos_items",
+  "info": {
+    "singularName": "como-trabajamos-item",
+    "pluralName": "como-trabajamos-items",
+    "displayName": "ComoTrabajamosItem"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icono": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "fondo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "descripcion": {
+      "type": "text",
+      "maxLength": 200,
+      "required": true
+    },
+    "link": {
+      "displayName": "Link",
+      "type": "component",
+      "repeatable": false,
+      "component": "utilidades.link",
+      "required": true
+    }
+  }
+}

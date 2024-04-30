@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "caracteristicas",
+  "info": {
+    "singularName": "caracteristica",
+    "pluralName": "caracteristicas",
+    "displayName": "Caracteristica"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "icono": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true,
+      "maxLength": 250
+    }
+  }
+}

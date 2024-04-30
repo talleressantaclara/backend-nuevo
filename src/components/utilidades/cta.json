@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_utilidades_ctas",
+  "info": {
+    "displayName": "Cta",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "maxLength": 30,
+      "required": true,
+      "default": "Ver más"
+    },
+    "href": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
+    },
+    "icono": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}
