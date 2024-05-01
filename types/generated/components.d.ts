@@ -182,7 +182,11 @@ export interface UtilidadesCta extends Schema.Component {
       Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
-    icono: Attribute.Media & Attribute.Required;
+    spriteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
   };
 }
 
