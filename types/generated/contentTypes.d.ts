@@ -856,8 +856,13 @@ export interface ApiCaracteristicaCaracteristica extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
-    slug: Attribute.UID<'api::caracteristica.caracteristica', 'titulo'> &
-      Attribute.Required;
+    href: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }> &
+      Attribute.DefaultTo<'#contacto'>;
+    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -905,6 +910,7 @@ export interface ApiComoTrabajamosItemComoTrabajamosItem
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
+    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1046,6 +1052,7 @@ export interface ApiOpcionContactoOpcionContacto extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
+    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1108,6 +1115,7 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
     singularName: 'publicacion';
     pluralName: 'publicacions';
     displayName: 'Publicacion';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1127,6 +1135,8 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
     esDestacada: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    slug: Attribute.UID<'api::publicacion.publicacion', 'titulo'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1171,6 +1181,7 @@ export interface ApiRedRed extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
+    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::red.red', 'oneToOne', 'admin::user'> &
@@ -1186,6 +1197,7 @@ export interface ApiServiceService extends Schema.CollectionType {
     singularName: 'service';
     pluralName: 'services';
     displayName: 'Service';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1203,6 +1215,7 @@ export interface ApiServiceService extends Schema.CollectionType {
         maxLength: 250;
       }>;
     link: Attribute.Component<'utilidades.link'> & Attribute.Required;
+    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

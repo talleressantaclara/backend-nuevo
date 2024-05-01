@@ -4,7 +4,8 @@
   "info": {
     "singularName": "service",
     "pluralName": "services",
-    "displayName": "Service"
+    "displayName": "Service",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -12,12 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "imagen": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "titulo": {
       "type": "string",
@@ -34,6 +35,11 @@
       "repeatable": false,
       "component": "utilidades.link",
       "required": true
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "unique": true
     }
   }
 }

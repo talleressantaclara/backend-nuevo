@@ -177,11 +177,6 @@ export interface UtilidadesCta extends Schema.Component {
         maxLength: 30;
       }> &
       Attribute.DefaultTo<'Ver m\u00E1s'>;
-    href: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 250;
-      }>;
     spriteName: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{

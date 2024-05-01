@@ -13,11 +13,6 @@
       "required": true,
       "default": "Ver más"
     },
-    "href": {
-      "type": "string",
-      "required": true,
-      "maxLength": 250
-    },
     "spriteName": {
       "type": "string",
       "required": true,

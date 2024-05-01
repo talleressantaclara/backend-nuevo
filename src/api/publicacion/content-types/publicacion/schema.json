@@ -4,7 +4,8 @@
   "info": {
     "singularName": "publicacion",
     "pluralName": "publicacions",
-    "displayName": "Publicacion"
+    "displayName": "Publicacion",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -31,6 +32,11 @@
     "esDestacada": {
       "type": "boolean",
       "default": false,
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "titulo",
       "required": true
     }
   }

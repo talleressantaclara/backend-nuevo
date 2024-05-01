@@ -27,9 +27,15 @@
       "required": true,
       "maxLength": 30
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "titulo",
+    "href": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30,
+      "default": "#contacto"
+    },
+    "order": {
+      "type": "integer",
+      "unique": true,
       "required": true
     }
   }
