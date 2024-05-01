@@ -1019,7 +1019,7 @@ export interface ApiOpcionContactoOpcionContacto extends Schema.CollectionType {
     href: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 40;
+        maxLength: 250;
       }>;
     label: Attribute.String &
       Attribute.Required &
@@ -1134,6 +1134,7 @@ export interface ApiRedRed extends Schema.CollectionType {
     singularName: 'red';
     pluralName: 'reds';
     displayName: 'Red';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1147,7 +1148,7 @@ export interface ApiRedRed extends Schema.CollectionType {
     href: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 30;
+        maxLength: 250;
       }>;
     icono: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;

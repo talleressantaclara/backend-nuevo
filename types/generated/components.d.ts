@@ -168,6 +168,7 @@ export interface UtilidadesCta extends Schema.Component {
   info: {
     displayName: 'Cta';
     icon: 'link';
+    description: '';
   };
   attributes: {
     texto: Attribute.String &
@@ -179,7 +180,7 @@ export interface UtilidadesCta extends Schema.Component {
     href: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 30;
+        maxLength: 250;
       }>;
     icono: Attribute.Media & Attribute.Required;
   };
@@ -201,7 +202,7 @@ export interface UtilidadesLink extends Schema.Component {
     href: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 25;
+        maxLength: 250;
       }>;
   };
 }

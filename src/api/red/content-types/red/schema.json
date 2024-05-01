@@ -4,7 +4,8 @@
   "info": {
     "singularName": "red",
     "pluralName": "reds",
-    "displayName": "Red"
+    "displayName": "Red",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -19,15 +20,15 @@
     "href": {
       "type": "string",
       "required": true,
-      "maxLength": 30
+      "maxLength": 250
     },
     "icono": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

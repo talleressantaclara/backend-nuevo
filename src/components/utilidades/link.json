@@ -15,7 +15,7 @@
     "href": {
       "type": "string",
       "required": true,
-      "maxLength": 25
+      "maxLength": 250
     }
   }
 }
