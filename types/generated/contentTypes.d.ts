@@ -1136,6 +1136,7 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
       Attribute.DefaultTo<false>;
     slug: Attribute.UID<'api::publicacion.publicacion', 'titulo'> &
       Attribute.Required;
+    imagen: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

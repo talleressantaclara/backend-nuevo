@@ -38,6 +38,14 @@
       "type": "uid",
       "targetField": "titulo",
       "required": true
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
