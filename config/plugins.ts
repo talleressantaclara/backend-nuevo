@@ -13,6 +13,12 @@ module.exports = ({ env }) => ({
 				delete: {}
 			}
 		}
+	},
+	graphql: {
+		enabled: true,
+		config: {
+			playgroundAlways: true
+		}
 	}
 	// ...
 });
