@@ -880,54 +880,6 @@ export interface ApiCaracteristicaCaracteristica extends Schema.CollectionType {
   };
 }
 
-export interface ApiComoTrabajamosItemComoTrabajamosItem
-  extends Schema.CollectionType {
-  collectionName: 'como_trabajamos_items';
-  info: {
-    singularName: 'como-trabajamos-item';
-    pluralName: 'como-trabajamos-items';
-    displayName: 'ComoTrabajamosItem';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    fondo: Attribute.Media & Attribute.Required;
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
-    descripcion: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 200;
-      }>;
-    link: Attribute.Component<'utilidades.link'> & Attribute.Required;
-    spriteName: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 30;
-      }>;
-    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::como-trabajamos-item.como-trabajamos-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::como-trabajamos-item.como-trabajamos-item',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiCompaniaInfoCompaniaInfo extends Schema.SingleType {
   collectionName: 'compania_infos';
   info: {
@@ -982,6 +934,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     singularName: 'home';
     pluralName: 'homes';
     displayName: 'Home';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -1004,8 +957,6 @@ export interface ApiHomeHome extends Schema.SingleType {
         maxLength: 150;
       }>;
     cta: Attribute.Component<'utilidades.cta'>;
-    comoTrabajamos: Attribute.Component<'disenio.como-trabajamos'> &
-      Attribute.Required;
     servicios: Attribute.Component<'disenio.servicios'> & Attribute.Required;
     nosotros: Attribute.Component<'disenio.nosotros'> & Attribute.Required;
     caracteristicas: Attribute.Component<'disenio.caracteristicas'> &
@@ -1018,6 +969,53 @@ export interface ApiHomeHome extends Schema.SingleType {
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHowItemHowItem extends Schema.CollectionType {
+  collectionName: 'how_items';
+  info: {
+    singularName: 'how-item';
+    pluralName: 'how-items';
+    displayName: 'howItem';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    fondo: Attribute.Media & Attribute.Required;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    descripcion: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    link: Attribute.Component<'utilidades.link'>;
+    spriteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    order: Attribute.Integer & Attribute.Required & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::how-item.how-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::how-item.how-item',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1253,9 +1251,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::cabecera.cabecera': ApiCabeceraCabecera;
       'api::caracteristica.caracteristica': ApiCaracteristicaCaracteristica;
-      'api::como-trabajamos-item.como-trabajamos-item': ApiComoTrabajamosItemComoTrabajamosItem;
       'api::compania-info.compania-info': ApiCompaniaInfoCompaniaInfo;
       'api::home.home': ApiHomeHome;
+      'api::how-item.how-item': ApiHowItemHowItem;
       'api::opcion-contacto.opcion-contacto': ApiOpcionContactoOpcionContacto;
       'api::pie-pagina.pie-pagina': ApiPiePaginaPiePagina;
       'api::publicacion.publicacion': ApiPublicacionPublicacion;

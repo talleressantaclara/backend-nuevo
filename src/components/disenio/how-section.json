@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_disenio_how_sections",
+  "info": {
+    "displayName": "howSection",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "maxLength": 80,
+      "required": false
+    },
+    "how_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::how-item.how-item"
+    }
+  }
+}

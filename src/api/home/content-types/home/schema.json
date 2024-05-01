@@ -4,7 +4,8 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "Home"
+    "displayName": "Home",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -12,12 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "fondo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "preTitulo": {
       "type": "string",
@@ -38,12 +39,6 @@
       "type": "component",
       "repeatable": false,
       "component": "utilidades.cta"
-    },
-    "comoTrabajamos": {
-      "type": "component",
-      "repeatable": false,
-      "component": "disenio.como-trabajamos",
-      "required": true
     },
     "servicios": {
       "type": "component",

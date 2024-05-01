@@ -1,41 +1,38 @@
 {
   "kind": "collectionType",
-  "collectionName": "como_trabajamos_items",
+  "collectionName": "how_items",
   "info": {
-    "singularName": "como-trabajamos-item",
-    "pluralName": "como-trabajamos-items",
-    "displayName": "ComoTrabajamosItem",
-    "description": ""
+    "singularName": "how-item",
+    "pluralName": "how-items",
+    "displayName": "howItem"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
     "fondo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
     "titulo": {
       "type": "string",
-      "required": true,
-      "maxLength": 50
+      "maxLength": 50,
+      "required": true
     },
     "descripcion": {
       "type": "text",
-      "maxLength": 200,
+      "maxLength": 250,
       "required": true
     },
     "link": {
-      "displayName": "Link",
       "type": "component",
       "repeatable": false,
-      "component": "utilidades.link",
-      "required": true
+      "component": "utilidades.link"
     },
     "spriteName": {
       "type": "string",

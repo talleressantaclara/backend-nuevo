@@ -48,31 +48,6 @@ export interface DisenioCaracteristicas extends Schema.Component {
   };
 }
 
-export interface DisenioComoTrabajamos extends Schema.Component {
-  collectionName: 'components_disenio_como_trabajamos';
-  info: {
-    displayName: 'ComoTrabajamos';
-    icon: 'shield';
-    description: '';
-  };
-  attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
-    descripcion: Attribute.Text &
-      Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
-    caracteristicas: Attribute.Relation<
-      'disenio.como-trabajamos',
-      'oneToMany',
-      'api::caracteristica.caracteristica'
-    >;
-  };
-}
-
 export interface DisenioContacto extends Schema.Component {
   collectionName: 'components_disenio_contactos';
   info: {
@@ -90,6 +65,31 @@ export interface DisenioContacto extends Schema.Component {
         maxLength: 80;
       }>;
     fondo: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface DisenioHowSection extends Schema.Component {
+  collectionName: 'components_disenio_how_sections';
+  info: {
+    displayName: 'howSection';
+    icon: 'bulletList';
+    description: '';
+  };
+  attributes: {
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    descripcion: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    how_items: Attribute.Relation<
+      'disenio.how-section',
+      'oneToMany',
+      'api::how-item.how-item'
+    >;
   };
 }
 
@@ -222,8 +222,8 @@ declare module '@strapi/types' {
     export interface Components {
       'disenio.blog': DisenioBlog;
       'disenio.caracteristicas': DisenioCaracteristicas;
-      'disenio.como-trabajamos': DisenioComoTrabajamos;
       'disenio.contacto': DisenioContacto;
+      'disenio.how-section': DisenioHowSection;
       'disenio.mapa': DisenioMapa;
       'disenio.nosotros': DisenioNosotros;
       'disenio.servicios': DisenioServicios;
