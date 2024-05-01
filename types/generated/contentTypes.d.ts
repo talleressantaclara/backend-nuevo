@@ -1010,12 +1010,13 @@ export interface ApiOpcionContactoOpcionContacto extends Schema.CollectionType {
     singularName: 'opcion-contacto';
     pluralName: 'opcion-contactos';
     displayName: 'opcionContacto';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    texto: Attribute.String &
+    href: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 40;
@@ -1026,6 +1027,9 @@ export interface ApiOpcionContactoOpcionContacto extends Schema.CollectionType {
         maxLength: 40;
       }>;
     icono: Attribute.Media & Attribute.Required;
+    isEmail: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
