@@ -856,6 +856,8 @@ export interface ApiCaracteristicaCaracteristica extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
+    slug: Attribute.UID<'api::caracteristica.caracteristica', 'titulo'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
