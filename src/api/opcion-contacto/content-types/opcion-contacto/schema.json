@@ -22,18 +22,15 @@
       "required": true,
       "maxLength": 40
     },
-    "icono": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "isEmail": {
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "spriteName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
     }
   }
 }

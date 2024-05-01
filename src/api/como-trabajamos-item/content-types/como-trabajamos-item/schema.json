@@ -4,28 +4,21 @@
   "info": {
     "singularName": "como-trabajamos-item",
     "pluralName": "como-trabajamos-items",
-    "displayName": "ComoTrabajamosItem"
+    "displayName": "ComoTrabajamosItem",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "icono": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
-    },
     "fondo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "titulo": {
       "type": "string",
@@ -43,6 +36,11 @@
       "repeatable": false,
       "component": "utilidades.link",
       "required": true
+    },
+    "spriteName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30
     }
   }
 }

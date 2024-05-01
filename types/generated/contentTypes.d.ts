@@ -835,12 +835,12 @@ export interface ApiCaracteristicaCaracteristica extends Schema.CollectionType {
     singularName: 'caracteristica';
     pluralName: 'caracteristicas';
     displayName: 'Caracteristica';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    icono: Attribute.Media & Attribute.Required;
     titulo: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
@@ -850,6 +850,11 @@ export interface ApiCaracteristicaCaracteristica extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 250;
+      }>;
+    spriteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -875,12 +880,12 @@ export interface ApiComoTrabajamosItemComoTrabajamosItem
     singularName: 'como-trabajamos-item';
     pluralName: 'como-trabajamos-items';
     displayName: 'ComoTrabajamosItem';
+    description: '';
   };
   options: {
     draftAndPublish: false;
   };
   attributes: {
-    icono: Attribute.Media & Attribute.Required;
     fondo: Attribute.Media & Attribute.Required;
     titulo: Attribute.String &
       Attribute.Required &
@@ -893,6 +898,11 @@ export interface ApiComoTrabajamosItemComoTrabajamosItem
         maxLength: 200;
       }>;
     link: Attribute.Component<'utilidades.link'> & Attribute.Required;
+    spriteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1026,10 +1036,14 @@ export interface ApiOpcionContactoOpcionContacto extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 40;
       }>;
-    icono: Attribute.Media & Attribute.Required;
     isEmail: Attribute.Boolean &
       Attribute.Required &
       Attribute.DefaultTo<false>;
+    spriteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1150,7 +1164,11 @@ export interface ApiRedRed extends Schema.CollectionType {
       Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
-    icono: Attribute.Media & Attribute.Required;
+    spriteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::red.red', 'oneToOne', 'admin::user'> &

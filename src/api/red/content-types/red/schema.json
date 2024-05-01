@@ -22,13 +22,10 @@
       "required": true,
       "maxLength": 250
     },
-    "icono": {
-      "type": "media",
-      "multiple": false,
+    "spriteName": {
+      "type": "string",
       "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+      "maxLength": 30
     }
   }
 }
