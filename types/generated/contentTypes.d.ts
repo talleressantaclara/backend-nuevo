@@ -964,6 +964,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     contacto: Attribute.Component<'disenio.contacto'> & Attribute.Required;
     blog: Attribute.Component<'disenio.blog'> & Attribute.Required;
     mapa: Attribute.Component<'disenio.mapa'> & Attribute.Required;
+    howSection: Attribute.Component<'disenio.how-section'> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &

@@ -75,6 +75,12 @@
       "repeatable": false,
       "component": "disenio.mapa",
       "required": true
+    },
+    "howSection": {
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.how-section",
+      "required": true
     }
   }
 }
