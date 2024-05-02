@@ -1052,6 +1052,11 @@ export interface ApiOpcionContactoOpcionContacto extends Schema.CollectionType {
         maxLength: 30;
       }>;
     order: Attribute.Integer & Attribute.Required & Attribute.Unique;
+    texto: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

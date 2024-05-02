@@ -36,6 +36,11 @@
       "type": "integer",
       "required": true,
       "unique": true
+    },
+    "texto": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40
     }
   }
 }
