@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_contenidos_larga_sencillas",
+  "info": {
+    "displayName": "LargoSencillo",
+    "icon": "filter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "primeraImagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "primerBloque": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categoria.categoria"
+    },
+    "segundaImagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "segundoBloque": {
+      "type": "richtext",
+      "minLength": 100
+    }
+  }
+}

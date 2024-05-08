@@ -50,12 +50,13 @@
     "contenido": {
       "type": "dynamiczone",
       "components": [
-        "blog.sub-titulo",
-        "blog.imagen-simple",
-        "blog.imagen-compleja",
-        "blog.bloque-texto",
-        "blog.autor"
+        "contenidos.corto-sencillo",
+        "contenidos.corto-complejo",
+        "contenidos.larga-sencilla",
+        "contenidos.largo-complejo"
       ],
+      "min": 0,
+      "max": 1,
       "required": true
     }
   }

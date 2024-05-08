@@ -880,6 +880,43 @@ export interface ApiCaracteristicaCaracteristica extends Schema.CollectionType {
   };
 }
 
+export interface ApiCategoriaCategoria extends Schema.CollectionType {
+  collectionName: 'categorias';
+  info: {
+    singularName: 'categoria';
+    pluralName: 'categorias';
+    displayName: 'categoria';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    nombre: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
+    slug: Attribute.UID<'api::categoria.categoria', 'nombre'> &
+      Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::categoria.categoria',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::categoria.categoria',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCompaniaInfoCompaniaInfo extends Schema.SingleType {
   collectionName: 'compania_infos';
   info: {
@@ -1144,14 +1181,20 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
     imagen: Attribute.Media & Attribute.Required;
     contenido: Attribute.DynamicZone<
       [
-        'blog.sub-titulo',
-        'blog.imagen-simple',
-        'blog.imagen-compleja',
-        'blog.bloque-texto',
-        'blog.autor'
+        'contenidos.corto-sencillo',
+        'contenidos.corto-complejo',
+        'contenidos.larga-sencilla',
+        'contenidos.largo-complejo'
       ]
     > &
-      Attribute.Required;
+      Attribute.Required &
+      Attribute.SetMinMax<
+        {
+          min: 0;
+          max: 1;
+        },
+        number
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1268,6 +1311,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::cabecera.cabecera': ApiCabeceraCabecera;
       'api::caracteristica.caracteristica': ApiCaracteristicaCaracteristica;
+      'api::categoria.categoria': ApiCategoriaCategoria;
       'api::compania-info.compania-info': ApiCompaniaInfoCompaniaInfo;
       'api::home.home': ApiHomeHome;
       'api::how-item.how-item': ApiHowItemHowItem;

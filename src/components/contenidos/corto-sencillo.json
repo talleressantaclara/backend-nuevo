@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_contenidos_corto_sencillos",
+  "info": {
+    "displayName": "cortoSencillo",
+    "icon": "calendar",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bloqueDeTexto": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categoria.categoria"
+    }
+  }
+}

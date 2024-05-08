@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_contenidos_corto_complejos",
+  "info": {
+    "displayName": "CortoComplejo",
+    "icon": "server"
+  },
+  "options": {},
+  "attributes": {
+    "imagenes": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "bloqueDeTexto": {
+      "type": "richtext",
+      "required": true,
+      "minLength": 100
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categoria.categoria"
+    }
+  }
+}

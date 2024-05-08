@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_contenidos_largo_complejos",
+  "info": {
+    "displayName": "LargoComplejo",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "primerasImagenes": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "primerBloque": {
+      "type": "richtext",
+      "minLength": 100,
+      "required": true
+    },
+    "segundasImagenes": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "segundoBloque": {
+      "type": "richtext",
+      "minLength": 100,
+      "required": true
+    },
+    "categoria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categoria.categoria"
+    }
+  }
+}

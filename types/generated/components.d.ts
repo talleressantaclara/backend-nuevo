@@ -1,64 +1,99 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface BlogAutor extends Schema.Component {
-  collectionName: 'components_blog_autors';
+export interface ContenidosCortoComplejo extends Schema.Component {
+  collectionName: 'components_contenidos_corto_complejos';
   info: {
-    displayName: 'autor';
-    icon: 'user';
-    description: '';
-  };
-  attributes: {
-    admin_user: Attribute.Relation<'blog.autor', 'oneToOne', 'admin::user'>;
-    imagen: Attribute.Media & Attribute.Required;
-  };
-}
-
-export interface BlogBloqueTexto extends Schema.Component {
-  collectionName: 'components_blog_bloque_textos';
-  info: {
-    displayName: 'bloqueTexto';
-    icon: 'write';
-  };
-  attributes: {
-    textoEnriquecido: Attribute.Blocks & Attribute.Required;
-  };
-}
-
-export interface BlogImagenCompleja extends Schema.Component {
-  collectionName: 'components_blog_imagen_complejas';
-  info: {
-    displayName: 'imagenCompleja';
-    icon: 'landscape';
+    displayName: 'CortoComplejo';
+    icon: 'server';
   };
   attributes: {
     imagenes: Attribute.Media & Attribute.Required;
+    bloqueDeTexto: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 100;
+      }>;
+    categoria: Attribute.Relation<
+      'contenidos.corto-complejo',
+      'oneToOne',
+      'api::categoria.categoria'
+    >;
   };
 }
 
-export interface BlogImagenSimple extends Schema.Component {
-  collectionName: 'components_blog_imagen_simples';
+export interface ContenidosCortoSencillo extends Schema.Component {
+  collectionName: 'components_contenidos_corto_sencillos';
   info: {
-    displayName: 'imagenSimple';
-    icon: 'picture';
+    displayName: 'cortoSencillo';
+    icon: 'calendar';
+    description: '';
   };
   attributes: {
     imagen: Attribute.Media & Attribute.Required;
+    bloqueDeTexto: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 100;
+      }>;
+    categoria: Attribute.Relation<
+      'contenidos.corto-sencillo',
+      'oneToOne',
+      'api::categoria.categoria'
+    >;
   };
 }
 
-export interface BlogSubTitulo extends Schema.Component {
-  collectionName: 'components_blog_sub_titulos';
+export interface ContenidosLargaSencilla extends Schema.Component {
+  collectionName: 'components_contenidos_larga_sencillas';
   info: {
-    displayName: 'subTitulo';
-    icon: 'write';
+    displayName: 'LargoSencillo';
+    icon: 'filter';
+    description: '';
   };
   attributes: {
-    texto: Attribute.String &
+    primeraImagen: Attribute.Media & Attribute.Required;
+    primerBloque: Attribute.RichText &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 15;
-        maxLength: 100;
+        minLength: 100;
       }>;
+    categoria: Attribute.Relation<
+      'contenidos.larga-sencilla',
+      'oneToOne',
+      'api::categoria.categoria'
+    >;
+    segundaImagen: Attribute.Media & Attribute.Required;
+    segundoBloque: Attribute.RichText &
+      Attribute.SetMinMaxLength<{
+        minLength: 100;
+      }>;
+  };
+}
+
+export interface ContenidosLargoComplejo extends Schema.Component {
+  collectionName: 'components_contenidos_largo_complejos';
+  info: {
+    displayName: 'LargoComplejo';
+    icon: 'layer';
+  };
+  attributes: {
+    primerasImagenes: Attribute.Media & Attribute.Required;
+    primerBloque: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 100;
+      }>;
+    segundasImagenes: Attribute.Media & Attribute.Required;
+    segundoBloque: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 100;
+      }>;
+    categoria: Attribute.Relation<
+      'contenidos.largo-complejo',
+      'oneToOne',
+      'api::categoria.categoria'
+    >;
   };
 }
 
@@ -282,11 +317,10 @@ export interface UtilidadesNavegacion extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'blog.autor': BlogAutor;
-      'blog.bloque-texto': BlogBloqueTexto;
-      'blog.imagen-compleja': BlogImagenCompleja;
-      'blog.imagen-simple': BlogImagenSimple;
-      'blog.sub-titulo': BlogSubTitulo;
+      'contenidos.corto-complejo': ContenidosCortoComplejo;
+      'contenidos.corto-sencillo': ContenidosCortoSencillo;
+      'contenidos.larga-sencilla': ContenidosLargaSencilla;
+      'contenidos.largo-complejo': ContenidosLargoComplejo;
       'disenio.blog': DisenioBlog;
       'disenio.caracteristicas': DisenioCaracteristicas;
       'disenio.contacto': DisenioContacto;
