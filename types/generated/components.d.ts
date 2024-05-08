@@ -1,5 +1,67 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface BlogAutor extends Schema.Component {
+  collectionName: 'components_blog_autors';
+  info: {
+    displayName: 'autor';
+    icon: 'user';
+    description: '';
+  };
+  attributes: {
+    admin_user: Attribute.Relation<'blog.autor', 'oneToOne', 'admin::user'>;
+    imagen: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface BlogBloqueTexto extends Schema.Component {
+  collectionName: 'components_blog_bloque_textos';
+  info: {
+    displayName: 'bloqueTexto';
+    icon: 'write';
+  };
+  attributes: {
+    textoEnriquecido: Attribute.Blocks & Attribute.Required;
+  };
+}
+
+export interface BlogImagenCompleja extends Schema.Component {
+  collectionName: 'components_blog_imagen_complejas';
+  info: {
+    displayName: 'imagenCompleja';
+    icon: 'landscape';
+  };
+  attributes: {
+    imagenes: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface BlogImagenSimple extends Schema.Component {
+  collectionName: 'components_blog_imagen_simples';
+  info: {
+    displayName: 'imagenSimple';
+    icon: 'picture';
+  };
+  attributes: {
+    imagen: Attribute.Media & Attribute.Required;
+  };
+}
+
+export interface BlogSubTitulo extends Schema.Component {
+  collectionName: 'components_blog_sub_titulos';
+  info: {
+    displayName: 'subTitulo';
+    icon: 'write';
+  };
+  attributes: {
+    texto: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 15;
+        maxLength: 100;
+      }>;
+  };
+}
+
 export interface DisenioBlog extends Schema.Component {
   collectionName: 'components_disenio_blogs';
   info: {
@@ -220,6 +282,11 @@ export interface UtilidadesNavegacion extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'blog.autor': BlogAutor;
+      'blog.bloque-texto': BlogBloqueTexto;
+      'blog.imagen-compleja': BlogImagenCompleja;
+      'blog.imagen-simple': BlogImagenSimple;
+      'blog.sub-titulo': BlogSubTitulo;
       'disenio.blog': DisenioBlog;
       'disenio.caracteristicas': DisenioCaracteristicas;
       'disenio.contacto': DisenioContacto;

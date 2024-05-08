@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_blog_bloque_textos",
+  "info": {
+    "displayName": "bloqueTexto",
+    "icon": "write"
+  },
+  "options": {},
+  "attributes": {
+    "textoEnriquecido": {
+      "type": "blocks",
+      "required": true
+    }
+  }
+}

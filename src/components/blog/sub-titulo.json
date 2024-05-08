@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blog_sub_titulos",
+  "info": {
+    "displayName": "subTitulo",
+    "icon": "write"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100,
+      "minLength": 15
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blog_imagen_simples",
+  "info": {
+    "displayName": "imagenSimple",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

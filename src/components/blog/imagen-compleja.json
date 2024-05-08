@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blog_imagen_complejas",
+  "info": {
+    "displayName": "imagenCompleja",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "imagenes": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

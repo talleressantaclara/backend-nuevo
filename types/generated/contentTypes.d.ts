@@ -1142,6 +1142,16 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
     slug: Attribute.UID<'api::publicacion.publicacion', 'titulo'> &
       Attribute.Required;
     imagen: Attribute.Media & Attribute.Required;
+    contenido: Attribute.DynamicZone<
+      [
+        'blog.sub-titulo',
+        'blog.imagen-simple',
+        'blog.imagen-compleja',
+        'blog.bloque-texto',
+        'blog.autor'
+      ]
+    > &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
