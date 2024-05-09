@@ -69,6 +69,13 @@ export interface ContenidosLargaSencilla extends Schema.Component {
         minLength: 100;
       }>;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
+    tipoPublicacion: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }> &
+      Attribute.DefaultTo<'largoSencillo'>;
   };
 }
 

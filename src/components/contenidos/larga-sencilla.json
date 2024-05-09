@@ -42,6 +42,13 @@
       "repeatable": false,
       "component": "contenidos.autor",
       "required": true
+    },
+    "tipoPublicacion": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "maxLength": 50,
+      "default": "largoSencillo"
     }
   }
 }
