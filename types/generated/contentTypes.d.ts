@@ -1180,12 +1180,7 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
       Attribute.Required;
     imagen: Attribute.Media & Attribute.Required;
     contenido: Attribute.DynamicZone<
-      [
-        'contenidos.corto-sencillo',
-        'contenidos.corto-complejo',
-        'contenidos.larga-sencilla',
-        'contenidos.largo-complejo'
-      ]
+      ['contenidos.corto-sencillo', 'contenidos.larga-sencilla']
     > &
       Attribute.Required &
       Attribute.SetMinMax<

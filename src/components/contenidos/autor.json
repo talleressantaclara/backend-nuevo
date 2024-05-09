@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_contenidos_autors",
+  "info": {
+    "displayName": "Autor",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40,
+      "minLength": 3
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

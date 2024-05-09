@@ -51,9 +51,7 @@
       "type": "dynamiczone",
       "components": [
         "contenidos.corto-sencillo",
-        "contenidos.corto-complejo",
-        "contenidos.larga-sencilla",
-        "contenidos.largo-complejo"
+        "contenidos.larga-sencilla"
       ],
       "min": 0,
       "max": 1,

@@ -1,23 +1,19 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface ContenidosCortoComplejo extends Schema.Component {
-  collectionName: 'components_contenidos_corto_complejos';
+export interface ContenidosAutor extends Schema.Component {
+  collectionName: 'components_contenidos_autors';
   info: {
-    displayName: 'CortoComplejo';
-    icon: 'server';
+    displayName: 'Autor';
+    icon: 'user';
   };
   attributes: {
-    imagenes: Attribute.Media & Attribute.Required;
-    bloqueDeTexto: Attribute.RichText &
+    nombre: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 100;
+        minLength: 3;
+        maxLength: 40;
       }>;
-    categoria: Attribute.Relation<
-      'contenidos.corto-complejo',
-      'oneToOne',
-      'api::categoria.categoria'
-    >;
+    imagen: Attribute.Media & Attribute.Required;
   };
 }
 
@@ -40,6 +36,11 @@ export interface ContenidosCortoSencillo extends Schema.Component {
       'oneToOne',
       'api::categoria.categoria'
     >;
+    tipoPublicacion: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.DefaultTo<'cortoSencillo'>;
+    autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
   };
 }
 
@@ -67,33 +68,7 @@ export interface ContenidosLargaSencilla extends Schema.Component {
       Attribute.SetMinMaxLength<{
         minLength: 100;
       }>;
-  };
-}
-
-export interface ContenidosLargoComplejo extends Schema.Component {
-  collectionName: 'components_contenidos_largo_complejos';
-  info: {
-    displayName: 'LargoComplejo';
-    icon: 'layer';
-  };
-  attributes: {
-    primerasImagenes: Attribute.Media & Attribute.Required;
-    primerBloque: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 100;
-      }>;
-    segundasImagenes: Attribute.Media & Attribute.Required;
-    segundoBloque: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 100;
-      }>;
-    categoria: Attribute.Relation<
-      'contenidos.largo-complejo',
-      'oneToOne',
-      'api::categoria.categoria'
-    >;
+    autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
   };
 }
 
@@ -317,10 +292,9 @@ export interface UtilidadesNavegacion extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'contenidos.corto-complejo': ContenidosCortoComplejo;
+      'contenidos.autor': ContenidosAutor;
       'contenidos.corto-sencillo': ContenidosCortoSencillo;
       'contenidos.larga-sencilla': ContenidosLargaSencilla;
-      'contenidos.largo-complejo': ContenidosLargoComplejo;
       'disenio.blog': DisenioBlog;
       'disenio.caracteristicas': DisenioCaracteristicas;
       'disenio.contacto': DisenioContacto;

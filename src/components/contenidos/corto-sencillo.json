@@ -24,6 +24,18 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::categoria.categoria"
+    },
+    "tipoPublicacion": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "default": "cortoSencillo"
+    },
+    "autor": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contenidos.autor",
+      "required": true
     }
   }
 }

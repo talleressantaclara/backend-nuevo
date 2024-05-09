@@ -36,6 +36,12 @@
     "segundoBloque": {
       "type": "richtext",
       "minLength": 100
+    },
+    "autor": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contenidos.autor",
+      "required": true
     }
   }
 }
