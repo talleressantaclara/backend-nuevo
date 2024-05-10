@@ -1003,6 +1003,11 @@ export interface ApiHomeHome extends Schema.SingleType {
       'oneToMany',
       'api::palabra-clave.palabra-clave'
     >;
+    tituloPagina: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 15;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &

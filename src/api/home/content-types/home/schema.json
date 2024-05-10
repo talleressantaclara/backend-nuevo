@@ -86,6 +86,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::palabra-clave.palabra-clave"
+    },
+    "tituloPagina": {
+      "type": "string",
+      "minLength": 15,
+      "required": true,
+      "unique": false
     }
   }
 }
