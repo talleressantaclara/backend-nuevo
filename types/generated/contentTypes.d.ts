@@ -923,6 +923,7 @@ export interface ApiCompaniaInfoCompaniaInfo extends Schema.SingleType {
     singularName: 'compania-info';
     pluralName: 'compania-infos';
     displayName: 'CompaniaInfo';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -942,11 +943,6 @@ export interface ApiCompaniaInfoCompaniaInfo extends Schema.SingleType {
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 50;
-      }>;
-    palabrasClave: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 500;
       }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1002,6 +998,11 @@ export interface ApiHomeHome extends Schema.SingleType {
     blog: Attribute.Component<'disenio.blog'> & Attribute.Required;
     mapa: Attribute.Component<'disenio.mapa'> & Attribute.Required;
     howSection: Attribute.Component<'disenio.how-section'> & Attribute.Required;
+    palabras_clave: Attribute.Relation<
+      'api::home.home',
+      'oneToMany',
+      'api::palabra-clave.palabra-clave'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
@@ -1104,6 +1105,41 @@ export interface ApiOpcionContactoOpcionContacto extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::opcion-contacto.opcion-contacto',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPalabraClavePalabraClave extends Schema.CollectionType {
+  collectionName: 'palabra_claves';
+  info: {
+    singularName: 'palabra-clave';
+    pluralName: 'palabra-claves';
+    displayName: 'palabraClave';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    palabra: Attribute.String &
+      Attribute.Required &
+      Attribute.Unique &
+      Attribute.SetMinMaxLength<{
+        minLength: 3;
+        maxLength: 50;
+      }>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::palabra-clave.palabra-clave',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::palabra-clave.palabra-clave',
       'oneToOne',
       'admin::user'
     > &
@@ -1311,6 +1347,7 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::how-item.how-item': ApiHowItemHowItem;
       'api::opcion-contacto.opcion-contacto': ApiOpcionContactoOpcionContacto;
+      'api::palabra-clave.palabra-clave': ApiPalabraClavePalabraClave;
       'api::pie-pagina.pie-pagina': ApiPiePaginaPiePagina;
       'api::publicacion.publicacion': ApiPublicacionPublicacion;
       'api::red.red': ApiRedRed;

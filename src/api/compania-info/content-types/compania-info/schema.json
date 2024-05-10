@@ -4,7 +4,8 @@
   "info": {
     "singularName": "compania-info",
     "pluralName": "compania-infos",
-    "displayName": "CompaniaInfo"
+    "displayName": "CompaniaInfo",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -25,11 +26,6 @@
       "type": "string",
       "required": true,
       "maxLength": 50
-    },
-    "palabrasClave": {
-      "type": "text",
-      "required": true,
-      "maxLength": 500
     }
   }
 }

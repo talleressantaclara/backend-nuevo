@@ -49,6 +49,11 @@
       "unique": true,
       "maxLength": 50,
       "default": "largoSencillo"
+    },
+    "palabras_clave": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::palabra-clave.palabra-clave"
     }
   }
 }

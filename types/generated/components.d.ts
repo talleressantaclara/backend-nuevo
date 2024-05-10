@@ -41,6 +41,11 @@ export interface ContenidosCortoSencillo extends Schema.Component {
       Attribute.Unique &
       Attribute.DefaultTo<'cortoSencillo'>;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
+    palabras_clave: Attribute.Relation<
+      'contenidos.corto-sencillo',
+      'oneToMany',
+      'api::palabra-clave.palabra-clave'
+    >;
   };
 }
 
@@ -76,6 +81,11 @@ export interface ContenidosLargaSencilla extends Schema.Component {
         maxLength: 50;
       }> &
       Attribute.DefaultTo<'largoSencillo'>;
+    palabras_clave: Attribute.Relation<
+      'contenidos.larga-sencilla',
+      'oneToMany',
+      'api::palabra-clave.palabra-clave'
+    >;
   };
 }
 

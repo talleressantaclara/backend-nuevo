@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "palabra_claves",
+  "info": {
+    "singularName": "palabra-clave",
+    "pluralName": "palabra-claves",
+    "displayName": "palabraClave"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "palabra": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50,
+      "unique": true,
+      "minLength": 3
+    }
+  }
+}
