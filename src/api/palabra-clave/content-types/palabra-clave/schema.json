@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "palabra_claves",
+  "collectionName": "palabras_claves",
   "info": {
     "singularName": "palabra-clave",
-    "pluralName": "palabra-claves",
+    "pluralName": "palabras-claves",
     "displayName": "palabraClave"
   },
   "options": {
@@ -13,10 +13,8 @@
   "attributes": {
     "palabra": {
       "type": "string",
-      "required": true,
-      "maxLength": 50,
-      "unique": true,
-      "minLength": 3
+      "minLength": 3,
+      "required": true
     }
   }
 }

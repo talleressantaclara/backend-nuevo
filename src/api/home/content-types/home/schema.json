@@ -82,16 +82,16 @@
       "component": "disenio.how-section",
       "required": true
     },
-    "palabras_clave": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::palabra-clave.palabra-clave"
-    },
     "tituloPagina": {
       "type": "string",
       "minLength": 15,
       "required": true,
       "unique": false
+    },
+    "palabras_clave": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::palabra-clave.palabra-clave"
     }
   }
 }
