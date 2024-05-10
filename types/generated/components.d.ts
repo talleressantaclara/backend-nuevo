@@ -29,23 +29,21 @@ export interface ContenidosCortoSencillo extends Schema.Component {
     bloqueDeTexto: Attribute.RichText &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 100;
+        minLength: 250;
+        maxLength: 450;
       }>;
     categoria: Attribute.Relation<
       'contenidos.corto-sencillo',
       'oneToOne',
       'api::categoria.categoria'
     >;
-    tipoPublicacion: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.DefaultTo<'cortoSencillo'>;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
     palabras_clave: Attribute.Relation<
       'contenidos.corto-sencillo',
       'oneToMany',
       'api::palabra-clave.palabra-clave'
     >;
+    tipoPublicacion: Attribute.Enumeration<['cortoSencillo', 'largoSencillo']>;
   };
 }
 
@@ -61,7 +59,8 @@ export interface ContenidosLargaSencilla extends Schema.Component {
     primerBloque: Attribute.RichText &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 100;
+        minLength: 250;
+        maxLength: 450;
       }>;
     categoria: Attribute.Relation<
       'contenidos.larga-sencilla',
@@ -71,21 +70,16 @@ export interface ContenidosLargaSencilla extends Schema.Component {
     segundaImagen: Attribute.Media & Attribute.Required;
     segundoBloque: Attribute.RichText &
       Attribute.SetMinMaxLength<{
-        minLength: 100;
+        minLength: 250;
+        maxLength: 450;
       }>;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
-    tipoPublicacion: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }> &
-      Attribute.DefaultTo<'largoSencillo'>;
     palabras_clave: Attribute.Relation<
       'contenidos.larga-sencilla',
       'oneToMany',
       'api::palabra-clave.palabra-clave'
     >;
+    tipoPublicacion: Attribute.Enumeration<['cortoSencillo', 'largoSencillo']>;
   };
 }
 

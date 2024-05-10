@@ -18,18 +18,13 @@
     "bloqueDeTexto": {
       "type": "richtext",
       "required": true,
-      "minLength": 100
+      "minLength": 250,
+      "maxLength": 450
     },
     "categoria": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::categoria.categoria"
-    },
-    "tipoPublicacion": {
-      "type": "string",
-      "required": true,
-      "unique": true,
-      "default": "cortoSencillo"
     },
     "autor": {
       "type": "component",
@@ -41,6 +36,13 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::palabra-clave.palabra-clave"
+    },
+    "tipoPublicacion": {
+      "type": "enumeration",
+      "enum": [
+        "cortoSencillo",
+        "largoSencillo"
+      ]
     }
   }
 }
