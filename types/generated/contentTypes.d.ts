@@ -1204,7 +1204,7 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
     titulo: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        maxLength: 50;
+        maxLength: 110;
       }>;
     descripcion: Attribute.Text &
       Attribute.Required &
