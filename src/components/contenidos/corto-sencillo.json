@@ -21,11 +21,6 @@
       "minLength": 250,
       "maxLength": 450
     },
-    "categoria": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::categoria.categoria"
-    },
     "autor": {
       "type": "component",
       "repeatable": false,

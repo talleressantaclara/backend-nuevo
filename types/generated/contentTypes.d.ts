@@ -1229,6 +1229,11 @@ export interface ApiPublicacionPublicacion extends Schema.CollectionType {
         },
         number
       >;
+    categorias: Attribute.Relation<
+      'api::publicacion.publicacion',
+      'oneToMany',
+      'api::categoria.categoria'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

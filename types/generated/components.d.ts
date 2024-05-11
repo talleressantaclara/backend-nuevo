@@ -32,11 +32,6 @@ export interface ContenidosCortoSencillo extends Schema.Component {
         minLength: 250;
         maxLength: 450;
       }>;
-    categoria: Attribute.Relation<
-      'contenidos.corto-sencillo',
-      'oneToOne',
-      'api::categoria.categoria'
-    >;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
     palabras_clave: Attribute.Relation<
       'contenidos.corto-sencillo',
@@ -62,11 +57,6 @@ export interface ContenidosLargaSencilla extends Schema.Component {
         minLength: 250;
         maxLength: 450;
       }>;
-    categoria: Attribute.Relation<
-      'contenidos.larga-sencilla',
-      'oneToOne',
-      'api::categoria.categoria'
-    >;
     segundaImagen: Attribute.Media & Attribute.Required;
     segundoBloque: Attribute.RichText &
       Attribute.SetMinMaxLength<{
