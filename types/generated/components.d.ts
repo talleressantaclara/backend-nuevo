@@ -29,8 +29,8 @@ export interface ContenidosCortoSencillo extends Schema.Component {
     bloqueDeTexto: Attribute.RichText &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 250;
-        maxLength: 450;
+        minLength: 300;
+        maxLength: 3500;
       }>;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
     palabras_clave: Attribute.Relation<
@@ -55,13 +55,13 @@ export interface ContenidosLargaSencilla extends Schema.Component {
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         minLength: 250;
-        maxLength: 450;
+        maxLength: 3500;
       }>;
     segundaImagen: Attribute.Media & Attribute.Required;
     segundoBloque: Attribute.RichText &
       Attribute.SetMinMaxLength<{
         minLength: 250;
-        maxLength: 450;
+        maxLength: 3500;
       }>;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
     palabras_clave: Attribute.Relation<

@@ -18,8 +18,8 @@
     "bloqueDeTexto": {
       "type": "richtext",
       "required": true,
-      "minLength": 250,
-      "maxLength": 450
+      "minLength": 300,
+      "maxLength": 3500
     },
     "autor": {
       "type": "component",

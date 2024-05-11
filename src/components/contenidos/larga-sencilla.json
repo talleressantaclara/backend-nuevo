@@ -19,7 +19,7 @@
       "type": "richtext",
       "required": true,
       "minLength": 250,
-      "maxLength": 450
+      "maxLength": 3500
     },
     "segundaImagen": {
       "type": "media",
@@ -32,7 +32,7 @@
     "segundoBloque": {
       "type": "richtext",
       "minLength": 250,
-      "maxLength": 450
+      "maxLength": 3500
     },
     "autor": {
       "type": "component",
