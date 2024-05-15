@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_disenio_popup_servicios",
+  "info": {
+    "displayName": "popupServicio",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "maxLength": 120,
+      "minLength": 20,
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "maxLength": 250,
+      "minLength": 40,
+      "required": true
+    },
+    "imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

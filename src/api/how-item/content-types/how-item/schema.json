@@ -4,7 +4,8 @@
   "info": {
     "singularName": "how-item",
     "pluralName": "how-items",
-    "displayName": "howItem"
+    "displayName": "howItem",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,12 +13,12 @@
   "pluginOptions": {},
   "attributes": {
     "fondo": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "titulo": {
       "type": "string",
@@ -43,6 +44,12 @@
       "type": "integer",
       "required": true,
       "unique": true
+    },
+    "textoTrasero": {
+      "type": "text",
+      "required": false,
+      "maxLength": 200,
+      "minLength": 50
     }
   }
 }

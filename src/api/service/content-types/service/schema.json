@@ -40,6 +40,13 @@
       "type": "integer",
       "required": true,
       "unique": true
+    },
+    "popupServicio": {
+      "displayName": "popupServicio",
+      "type": "component",
+      "repeatable": false,
+      "component": "disenio.popup-servicio",
+      "required": true
     }
   }
 }

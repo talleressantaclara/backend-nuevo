@@ -212,6 +212,29 @@ export interface DisenioNosotros extends Schema.Component {
   };
 }
 
+export interface DisenioPopupServicio extends Schema.Component {
+  collectionName: 'components_disenio_popup_servicios';
+  info: {
+    displayName: 'popupServicio';
+    icon: 'landscape';
+  };
+  attributes: {
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 20;
+        maxLength: 120;
+      }>;
+    descripcion: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        minLength: 40;
+        maxLength: 250;
+      }>;
+    imagen: Attribute.Media & Attribute.Required;
+  };
+}
+
 export interface DisenioServicios extends Schema.Component {
   collectionName: 'components_disenio_servicios';
   info: {
@@ -302,6 +325,7 @@ declare module '@strapi/types' {
       'disenio.how-section': DisenioHowSection;
       'disenio.mapa': DisenioMapa;
       'disenio.nosotros': DisenioNosotros;
+      'disenio.popup-servicio': DisenioPopupServicio;
       'disenio.servicios': DisenioServicios;
       'utilidades.cta': UtilidadesCta;
       'utilidades.link': UtilidadesLink;

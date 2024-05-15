@@ -1023,6 +1023,7 @@ export interface ApiHowItemHowItem extends Schema.CollectionType {
     singularName: 'how-item';
     pluralName: 'how-items';
     displayName: 'howItem';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1046,6 +1047,11 @@ export interface ApiHowItemHowItem extends Schema.CollectionType {
         maxLength: 30;
       }>;
     order: Attribute.Integer & Attribute.Required & Attribute.Unique;
+    textoTrasero: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        minLength: 50;
+        maxLength: 200;
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1313,6 +1319,8 @@ export interface ApiServiceService extends Schema.CollectionType {
       }>;
     link: Attribute.Component<'utilidades.link'> & Attribute.Required;
     order: Attribute.Integer & Attribute.Required & Attribute.Unique;
+    popupServicio: Attribute.Component<'disenio.popup-servicio'> &
+      Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
