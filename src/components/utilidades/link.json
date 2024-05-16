@@ -16,6 +16,11 @@
       "type": "string",
       "required": true,
       "maxLength": 250
+    },
+    "descripcion": {
+      "type": "text",
+      "minLength": 10,
+      "maxLength": 75
     }
   }
 }

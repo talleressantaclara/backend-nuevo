@@ -299,6 +299,11 @@ export interface UtilidadesLink extends Schema.Component {
       Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
+    descripcion: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        minLength: 10;
+        maxLength: 75;
+      }>;
   };
 }
 
