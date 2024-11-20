@@ -800,8 +800,6 @@ export interface ApiCabeceraCabecera extends Schema.SingleType {
     draftAndPublish: false;
   };
   attributes: {
-    logo: Attribute.Media & Attribute.Required;
-    navegacion: Attribute.Component<'utilidades.navegacion'>;
     redes: Attribute.Relation<
       'api::cabecera.cabecera',
       'oneToMany',

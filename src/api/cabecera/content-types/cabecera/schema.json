@@ -12,20 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
-    },
-    "navegacion": {
-      "displayName": "Navegacion",
-      "type": "component",
-      "repeatable": false,
-      "component": "utilidades.navegacion"
-    },
     "redes": {
       "type": "relation",
       "relation": "oneToMany",
