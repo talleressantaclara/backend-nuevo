@@ -1,4 +1,4 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Attribute, Schema } from '@strapi/strapi';
 
 export interface ContenidosAutor extends Schema.Component {
   collectionName: 'components_contenidos_autors';
@@ -7,32 +7,32 @@ export interface ContenidosAutor extends Schema.Component {
     icon: 'user';
   };
   attributes: {
+    imagen: Attribute.Media<'images'> & Attribute.Required;
     nombre: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 3;
         maxLength: 40;
+        minLength: 3;
       }>;
-    imagen: Attribute.Media & Attribute.Required;
   };
 }
 
 export interface ContenidosCortoSencillo extends Schema.Component {
   collectionName: 'components_contenidos_corto_sencillos';
   info: {
+    description: '';
     displayName: 'cortoSencillo';
     icon: 'calendar';
-    description: '';
   };
   attributes: {
-    imagen: Attribute.Media & Attribute.Required;
+    autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
     bloqueDeTexto: Attribute.RichText &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 300;
         maxLength: 3500;
+        minLength: 300;
       }>;
-    autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
+    imagen: Attribute.Media<'images'> & Attribute.Required;
     palabras_clave: Attribute.Relation<
       'contenidos.corto-sencillo',
       'oneToMany',
@@ -45,30 +45,30 @@ export interface ContenidosCortoSencillo extends Schema.Component {
 export interface ContenidosLargaSencilla extends Schema.Component {
   collectionName: 'components_contenidos_larga_sencillas';
   info: {
+    description: '';
     displayName: 'LargoSencillo';
     icon: 'filter';
-    description: '';
   };
   attributes: {
-    primeraImagen: Attribute.Media & Attribute.Required;
-    primerBloque: Attribute.RichText &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 250;
-        maxLength: 3500;
-      }>;
-    segundaImagen: Attribute.Media & Attribute.Required;
-    segundoBloque: Attribute.RichText &
-      Attribute.SetMinMaxLength<{
-        minLength: 250;
-        maxLength: 3500;
-      }>;
     autor: Attribute.Component<'contenidos.autor'> & Attribute.Required;
     palabras_clave: Attribute.Relation<
       'contenidos.larga-sencilla',
       'oneToMany',
       'api::palabra-clave.palabra-clave'
     >;
+    primeraImagen: Attribute.Media<'images'> & Attribute.Required;
+    primerBloque: Attribute.RichText &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 3500;
+        minLength: 250;
+      }>;
+    segundaImagen: Attribute.Media<'images'> & Attribute.Required;
+    segundoBloque: Attribute.RichText &
+      Attribute.SetMinMaxLength<{
+        maxLength: 3500;
+        minLength: 250;
+      }>;
     tipoPublicacion: Attribute.Enumeration<['cortoSencillo', 'largoSencillo']>;
   };
 }
@@ -80,11 +80,6 @@ export interface DisenioBlog extends Schema.Component {
     icon: 'filter';
   };
   attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
     descripcion: Attribute.Text &
       Attribute.SetMinMaxLength<{
         maxLength: 80;
@@ -94,6 +89,11 @@ export interface DisenioBlog extends Schema.Component {
       'oneToMany',
       'api::publicacion.publicacion'
     >;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
   };
 }
 
@@ -104,20 +104,20 @@ export interface DisenioCaracteristicas extends Schema.Component {
     icon: 'bulletList';
   };
   attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
-    descripcion: Attribute.Text &
-      Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
     caracteristicas: Attribute.Relation<
       'disenio.caracteristicas',
       'oneToMany',
       'api::caracteristica.caracteristica'
     >;
+    descripcion: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
   };
 }
 
@@ -128,32 +128,27 @@ export interface DisenioContacto extends Schema.Component {
     icon: 'user';
   };
   attributes: {
+    descripcion: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    fondo: Attribute.Media<'images'> & Attribute.Required;
     titulo: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 50;
       }>;
-    descripcion: Attribute.Text &
-      Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
-    fondo: Attribute.Media & Attribute.Required;
   };
 }
 
 export interface DisenioHowSection extends Schema.Component {
   collectionName: 'components_disenio_how_sections';
   info: {
+    description: '';
     displayName: 'howSection';
     icon: 'bulletList';
-    description: '';
   };
   attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
     descripcion: Attribute.Text &
       Attribute.SetMinMaxLength<{
         maxLength: 80;
@@ -163,6 +158,11 @@ export interface DisenioHowSection extends Schema.Component {
       'oneToMany',
       'api::how-item.how-item'
     >;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
   };
 }
 
@@ -173,15 +173,15 @@ export interface DisenioMapa extends Schema.Component {
     icon: 'pinMap';
   };
   attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
     descripcion: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 80;
+      }>;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
       }>;
   };
 }
@@ -193,22 +193,22 @@ export interface DisenioNosotros extends Schema.Component {
     icon: 'bulletList';
   };
   attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
-    descripcion: Attribute.Text &
-      Attribute.SetMinMaxLength<{
-        maxLength: 80;
-      }>;
     contenido: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 500;
       }>;
     cta: Attribute.Component<'utilidades.cta'> & Attribute.Required;
-    fondo: Attribute.Media & Attribute.Required;
+    descripcion: Attribute.Text &
+      Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+    fondo: Attribute.Media<'images'> & Attribute.Required;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
   };
 }
 
@@ -219,19 +219,19 @@ export interface DisenioPopupServicio extends Schema.Component {
     icon: 'landscape';
   };
   attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        minLength: 20;
-        maxLength: 120;
-      }>;
     descripcion: Attribute.Text &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 40;
         maxLength: 250;
+        minLength: 40;
       }>;
-    imagen: Attribute.Media & Attribute.Required;
+    imagen: Attribute.Media<'images'> & Attribute.Required;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 120;
+        minLength: 20;
+      }>;
   };
 }
 
@@ -242,11 +242,6 @@ export interface DisenioServicios extends Schema.Component {
     icon: 'bulletList';
   };
   attributes: {
-    titulo: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 50;
-      }>;
     descripcion: Attribute.Text &
       Attribute.SetMinMaxLength<{
         maxLength: 100;
@@ -256,65 +251,59 @@ export interface DisenioServicios extends Schema.Component {
       'oneToMany',
       'api::service.service'
     >;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
   };
 }
 
 export interface UtilidadesCta extends Schema.Component {
   collectionName: 'components_utilidades_ctas';
   info: {
+    description: '';
     displayName: 'Cta';
     icon: 'link';
-    description: '';
   };
   attributes: {
+    spriteName: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
     texto: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 30;
       }> &
       Attribute.DefaultTo<'Ver m\u00E1s'>;
-    spriteName: Attribute.String &
-      Attribute.Required &
-      Attribute.SetMinMaxLength<{
-        maxLength: 30;
-      }>;
   };
 }
 
 export interface UtilidadesLink extends Schema.Component {
   collectionName: 'components_utilidades_links';
   info: {
+    description: '';
     displayName: 'Link';
     icon: 'hashtag';
-    description: '';
   };
   attributes: {
-    texto: Attribute.String &
-      Attribute.Required &
+    descripcion: Attribute.Text &
       Attribute.SetMinMaxLength<{
-        maxLength: 30;
+        maxLength: 75;
+        minLength: 10;
       }>;
     href: Attribute.String &
       Attribute.Required &
       Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
-    descripcion: Attribute.Text &
+    texto: Attribute.String &
+      Attribute.Required &
       Attribute.SetMinMaxLength<{
-        minLength: 10;
-        maxLength: 75;
+        maxLength: 30;
       }>;
-  };
-}
-
-export interface UtilidadesNavegacion extends Schema.Component {
-  collectionName: 'components_utilidades_navegacions';
-  info: {
-    displayName: 'Navegacion';
-    icon: 'layer';
-  };
-  attributes: {
-    link: Attribute.Component<'utilidades.link', true> & Attribute.Required;
   };
 }
 
@@ -334,7 +323,6 @@ declare module '@strapi/types' {
       'disenio.servicios': DisenioServicios;
       'utilidades.cta': UtilidadesCta;
       'utilidades.link': UtilidadesLink;
-      'utilidades.navegacion': UtilidadesNavegacion;
     }
   }
 }
