@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_servicios_landing_tercera_seccions",
+  "info": {
+    "displayName": "TerceraSeccion",
+    "icon": "quote"
+  },
+  "options": {},
+  "attributes": {
+    "frase": {
+      "type": "text",
+      "required": true,
+      "maxLength": 200
+    },
+    "autor": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": true,
+      "component": "servicios-landing.cta",
+      "required": true
+    }
+  }
+}

@@ -259,6 +259,166 @@ export interface DisenioServicios extends Schema.Component {
   };
 }
 
+export interface ServiciosLandingCaracteristicaServicio
+  extends Schema.Component {
+  collectionName: 'components_servicios_landing_caracteristica_servicios';
+  info: {
+    displayName: 'CaracteristicaServicio';
+    icon: 'check';
+  };
+  attributes: {
+    descripcion: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+    icono: Attribute.Enumeration<
+      [
+        'Registro de Actividad',
+        'Servicio de Emergencia',
+        'Diagn\u00F3stico Avanzado',
+        'Intercambio de Fluidos',
+        'Comparaci\u00F3n de Diagn\u00F3sticos',
+        'Diagn\u00F3stico Electr\u00F3nico',
+        'Alerta de Mantenimiento',
+        'Servicio Completado',
+        'Solicitar Asistencia',
+        'Informaci\u00F3n del Veh\u00EDculo',
+        'Agregar Servicio',
+        'Carga de Bater\u00EDa',
+        'Problema de Bater\u00EDa',
+        'Gesti\u00F3n de Taller',
+        'Diagn\u00F3stico Especializado',
+        'Agendar Cita',
+        'Veh\u00EDculo',
+        'Tarea Completada',
+        'Certificaci\u00F3n de Calidad',
+        'Centro de Ayuda',
+        'Electr\u00F3nica del Veh\u00EDculo',
+        'Lista de Revisi\u00F3n',
+        'Orden de Servicio',
+        'Precios',
+        'Cambio de Fluidos',
+        'Inspecci\u00F3n Visual',
+        'Atenci\u00F3n al Cliente',
+        'Monitoreo del Motor',
+        'M\u00E1s Informaci\u00F3n',
+        'Diagn\u00F3stico Computarizado',
+        'Balanceo y Alineaci\u00F3n',
+        'Encontrar Repuestos',
+        'Buscar',
+        'Configuraci\u00F3n',
+        'Satisfacci\u00F3n del Cliente',
+        'Diagn\u00F3stico Mec\u00E1nico',
+        'Advertencia',
+        'Reparaci\u00F3n',
+        'Diagn\u00F3stico y B\u00FAsqueda de Fallas',
+        'Protecci\u00F3n y Seguridad'
+      ]
+    >;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }>;
+  };
+}
+
+export interface ServiciosLandingCta extends Schema.Component {
+  collectionName: 'components_servicios_landing_ctas';
+  info: {
+    displayName: 'Cta';
+    icon: 'link';
+  };
+  attributes: {
+    enlace: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }> &
+      Attribute.DefaultTo<'https://wa.link/63oe8r'>;
+    texto: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }> &
+      Attribute.DefaultTo<'Cotiza Ahora'>;
+  };
+}
+
+export interface ServiciosLandingPrimeraSeccion extends Schema.Component {
+  collectionName: 'components_servicios_landing_primera_seccions';
+  info: {
+    description: '';
+    displayName: 'PrimeraSeccion';
+    icon: 'bulletList';
+  };
+  attributes: {
+    cta: Attribute.Component<'servicios-landing.cta'> & Attribute.Required;
+    descripcion: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 150;
+      }>;
+    imagenesCarrusel: Attribute.Media<'images', true> & Attribute.Required;
+    imagenFlotante: Attribute.Media<'images'>;
+    titulo: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 40;
+      }> &
+      Attribute.DefaultTo<'Reparaci\u00F3n de cajas autom\u00E1ticas'>;
+  };
+}
+
+export interface ServiciosLandingSegundaSeccion extends Schema.Component {
+  collectionName: 'components_servicios_landing_segunda_seccions';
+  info: {
+    description: '';
+    displayName: 'SegundaSeccion';
+    icon: 'layer';
+  };
+  attributes: {
+    caracteristicaServicio: Attribute.Component<
+      'servicios-landing.caracteristica-servicio',
+      true
+    > &
+      Attribute.Required;
+    caracteristicaServicio2: Attribute.Component<
+      'servicios-landing.caracteristica-servicio',
+      true
+    > &
+      Attribute.Required;
+    caracteristicaServicio3: Attribute.Component<
+      'servicios-landing.caracteristica-servicio',
+      true
+    > &
+      Attribute.Required;
+  };
+}
+
+export interface ServiciosLandingTerceraSeccion extends Schema.Component {
+  collectionName: 'components_servicios_landing_tercera_seccions';
+  info: {
+    displayName: 'TerceraSeccion';
+    icon: 'quote';
+  };
+  attributes: {
+    autor: Attribute.String &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 50;
+      }>;
+    cta: Attribute.Component<'servicios-landing.cta', true> &
+      Attribute.Required;
+    frase: Attribute.Text &
+      Attribute.Required &
+      Attribute.SetMinMaxLength<{
+        maxLength: 200;
+      }>;
+  };
+}
+
 export interface UtilidadesCta extends Schema.Component {
   collectionName: 'components_utilidades_ctas';
   info: {
@@ -321,6 +481,11 @@ declare module '@strapi/types' {
       'disenio.nosotros': DisenioNosotros;
       'disenio.popup-servicio': DisenioPopupServicio;
       'disenio.servicios': DisenioServicios;
+      'servicios-landing.caracteristica-servicio': ServiciosLandingCaracteristicaServicio;
+      'servicios-landing.cta': ServiciosLandingCta;
+      'servicios-landing.primera-seccion': ServiciosLandingPrimeraSeccion;
+      'servicios-landing.segunda-seccion': ServiciosLandingSegundaSeccion;
+      'servicios-landing.tercera-seccion': ServiciosLandingTerceraSeccion;
       'utilidades.cta': UtilidadesCta;
       'utilidades.link': UtilidadesLink;
     }

@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_servicios_landing_primera_seccions",
+  "info": {
+    "displayName": "PrimeraSeccion",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "required": true,
+      "maxLength": 40,
+      "default": "Reparación de cajas automáticas"
+    },
+    "descripcion": {
+      "type": "text",
+      "maxLength": 150,
+      "required": true
+    },
+    "cta": {
+      "displayName": "Cta",
+      "type": "component",
+      "repeatable": false,
+      "component": "servicios-landing.cta",
+      "required": true
+    },
+    "imagenesCarrusel": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "imagenFlotante": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    }
+  }
+}

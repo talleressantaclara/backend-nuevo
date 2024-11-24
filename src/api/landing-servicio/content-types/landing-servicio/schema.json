@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landing_servicios",
+  "info": {
+    "singularName": "landing-servicio",
+    "pluralName": "landing-servicios",
+    "displayName": "LandingServicio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "primeraSeccion": {
+      "type": "component",
+      "repeatable": false,
+      "component": "servicios-landing.primera-seccion",
+      "required": true
+    },
+    "segundaSeccion": {
+      "type": "component",
+      "repeatable": false,
+      "component": "servicios-landing.segunda-seccion",
+      "required": true
+    },
+    "terceraSeccion": {
+      "type": "component",
+      "repeatable": false,
+      "component": "servicios-landing.tercera-seccion",
+      "required": true
+    }
+  }
+}

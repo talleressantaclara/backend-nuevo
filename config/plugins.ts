@@ -27,8 +27,8 @@ module.exports = ({ env }) => ({
 		config: {
 			neonApiKey: 'vujp696e3odqvcvn3fflqv65rn9v9sl3j5z2vbt6016pgt33sl1cltfbpv9auqkj',
 			neonProjectName: 'talleres',
-			neonRole: 'neondb_owner'
-			//(gitBranch: "main") // branch can be pinned via this config option. Will not use branch from git then. Usefull for preview/production deployment
+			neonRole: 'neondb_owner',
+			gitBranch: 'develop' // branch can be pinned via this config option. Will not use branch from git then. Usefull for preview/production deployment
 		}
 	}
 });

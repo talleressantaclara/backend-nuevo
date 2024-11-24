@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_servicios_landing_segunda_seccions",
+  "info": {
+    "displayName": "SegundaSeccion",
+    "icon": "layer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "caracteristicaServicio": {
+      "displayName": "CaracteristicaServicio",
+      "type": "component",
+      "repeatable": true,
+      "component": "servicios-landing.caracteristica-servicio",
+      "required": true
+    },
+    "caracteristicaServicio2": {
+      "type": "component",
+      "repeatable": true,
+      "component": "servicios-landing.caracteristica-servicio",
+      "required": true
+    },
+    "caracteristicaServicio3": {
+      "type": "component",
+      "repeatable": true,
+      "component": "servicios-landing.caracteristica-servicio",
+      "required": true
+    }
+  }
+}

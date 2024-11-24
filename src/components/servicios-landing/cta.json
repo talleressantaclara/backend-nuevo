@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_servicios_landing_ctas",
+  "info": {
+    "displayName": "Cta",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "texto": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30,
+      "default": "Cotiza Ahora",
+      "unique": false
+    },
+    "enlace": {
+      "type": "string",
+      "maxLength": 250,
+      "default": "https://wa.link/63oe8r",
+      "required": true
+    }
+  }
+}

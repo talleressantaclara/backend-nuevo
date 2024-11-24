@@ -1,0 +1,65 @@
+{
+  "collectionName": "components_servicios_landing_caracteristica_servicios",
+  "info": {
+    "displayName": "CaracteristicaServicio",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "maxLength": 40,
+      "required": true
+    },
+    "descripcion": {
+      "type": "text",
+      "required": true,
+      "maxLength": 200
+    },
+    "icono": {
+      "type": "enumeration",
+      "enum": [
+        "Registro de Actividad",
+        "Servicio de Emergencia",
+        "Diagnóstico Avanzado",
+        "Intercambio de Fluidos",
+        "Comparación de Diagnósticos",
+        "Diagnóstico Electrónico",
+        "Alerta de Mantenimiento",
+        "Servicio Completado",
+        "Solicitar Asistencia",
+        "Información del Vehículo",
+        "Agregar Servicio",
+        "Carga de Batería",
+        "Problema de Batería",
+        "Gestión de Taller",
+        "Diagnóstico Especializado",
+        "Agendar Cita",
+        "Vehículo",
+        "Tarea Completada",
+        "Certificación de Calidad",
+        "Centro de Ayuda",
+        "Electrónica del Vehículo",
+        "Lista de Revisión",
+        "Orden de Servicio",
+        "Precios",
+        "Cambio de Fluidos",
+        "Inspección Visual",
+        "Atención al Cliente",
+        "Monitoreo del Motor",
+        "Más Información",
+        "Diagnóstico Computarizado",
+        "Balanceo y Alineación",
+        "Encontrar Repuestos",
+        "Buscar",
+        "Configuración",
+        "Satisfacción del Cliente",
+        "Diagnóstico Mecánico",
+        "Advertencia",
+        "Reparación",
+        "Diagnóstico y Búsqueda de Fallas",
+        "Protección y Seguridad"
+      ]
+    }
+  }
+}

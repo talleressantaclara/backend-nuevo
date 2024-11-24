@@ -559,6 +559,42 @@ export interface ApiHowItemHowItem extends Schema.CollectionType {
   };
 }
 
+export interface ApiLandingServicioLandingServicio
+  extends Schema.CollectionType {
+  collectionName: 'landing_servicios';
+  info: {
+    displayName: 'LandingServicio';
+    pluralName: 'landing-servicios';
+    singularName: 'landing-servicio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::landing-servicio.landing-servicio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    primeraSeccion: Attribute.Component<'servicios-landing.primera-seccion'> &
+      Attribute.Required;
+    publishedAt: Attribute.DateTime;
+    segundaSeccion: Attribute.Component<'servicios-landing.segunda-seccion'> &
+      Attribute.Required;
+    terceraSeccion: Attribute.Component<'servicios-landing.tercera-seccion'> &
+      Attribute.Required;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::landing-servicio.landing-servicio',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPalabraClavePalabraClave extends Schema.CollectionType {
   collectionName: 'palabras_claves';
   info: {
@@ -1138,6 +1174,7 @@ declare module '@strapi/types' {
       'api::categoria.categoria': ApiCategoriaCategoria;
       'api::home.home': ApiHomeHome;
       'api::how-item.how-item': ApiHowItemHowItem;
+      'api::landing-servicio.landing-servicio': ApiLandingServicioLandingServicio;
       'api::palabra-clave.palabra-clave': ApiPalabraClavePalabraClave;
       'api::publicacion.publicacion': ApiPublicacionPublicacion;
       'api::service.service': ApiServiceService;
